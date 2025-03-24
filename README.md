@@ -1,4 +1,3 @@
-<html lang="en">
 <body>
 
     <div class="container">
@@ -67,5 +66,4 @@
         <p>توضیحات تکمیلی در فایل‌های پروژه موجود هستند.</p>
     </div>
 </body>
-</html>
 
