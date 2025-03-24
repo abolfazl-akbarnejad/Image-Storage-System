@@ -1,4 +1,3 @@
-
 <body>
     <div class="container">
         <h1>سیستم ذخیره‌سازی تصویر</h1>
@@ -14,5 +13,22 @@
             <li><span class="highlight">مدیریت حجم و تعداد تصاویر:</span> کنترل و بهینه‌سازی تعداد و حجم تصاویر ذخیره‌شده.</li>
             <li><span class="highlight">حذف تصاویر غیرضروری:</span> قابلیت حذف تصاویری که دیگر در سایت استفاده نمی‌شوند.</li>
         </ul>
+        
+        <h2>راهنمای استفاده</h2>
+        <p>برای استفاده از این سیستم، مراحل زیر را انجام دهید:</p>
+        <ul>
+            <li>فایل‌های <code>js</code>، <code>migrations</code>، <code>models</code> و در نهایت <code>FileUploadController</code> را در پروژه خود قرار دهید.</li>
+            <li>در ورودی فایل موردنظر، این رویداد را اضافه کنید:
+                <pre><code>onchange="saveImage(this)"</code></pre>
+            </li>
+            <li>این قطعه کد را برای ذخیره مقدار تصویر قبلی اضافه کنید:
+                <pre><code>&lt;input type="hidden" name="old_image" value="{{ old('image') ?? old('old_image') }}"&gt;</code></pre>
+            </li>
+            <li>در کنترلر برای دریافت <code>id</code> تصویر، این کد را وارد کنید:
+                <pre><code>$inputs['image_id'] = saveImage($request, 'image',  $request->alt_image, 'content/post', 1440, 720) ?? redirect()->route('admin.content.post.edit')->withErrors('تصویر یا فایل آپلود نشده');</code></pre>
+            </li>
+        </ul>
+        <p><strong>نکته:</strong> مسیر ذخیره تصویر نباید تغییر کند.</p>
+        <p>توضیحات تکمیلی در فایل‌های پروژه موجود هستند.</p>
     </div>
 </body>
