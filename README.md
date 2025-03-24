@@ -1,5 +1,4 @@
 <body>
-
     <div class="container">
         <h1>Image Storage System</h1>
         <p>This system allows you to store and manage images uploaded via an HTML <code>input</code> field. Key features include:</p>
@@ -66,4 +65,3 @@
         <p>توضیحات تکمیلی در فایل‌های پروژه موجود هستند.</p>
     </div>
 </body>
-
